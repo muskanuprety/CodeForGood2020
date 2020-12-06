@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = "container" >
+<div class="row">
+    <div class="col-sm-3">
+      <div class="box">
+        <h6>What are the Courses that you are looking for?</h6>
+        <form class="form-group" action="Request_Quote" method="post">
+          {% csrf_token %}
+          Topic of Interest: <input class="form-control" type="text" name="topic" value=""><br>
+          
+          No. Of Potential Learners: <input class="form-control" type="int" name="num_users" value=""><br>
+          
+          
+          <button class="alert alert-danger" type="submit" name="button">Submit</button>
+        </form>
+      </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

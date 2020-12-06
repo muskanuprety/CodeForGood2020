@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class = "container" >
+<div class="row">
+    <div class="col-sm-3">
+      <div class="box">
+        <h6>Register Company</h6>
+        <form class="form-group" action="Register_Company" method="post">
+          {% csrf_token %}
+          Name: <input class="form-control" type="text" name="name" value=""><br>
+          
+          Email: <input class="form-control" type="text" name="email" value=""><br>
+          Company: <input class="form-control" type="text" name="company" value=""><br>
+          
+          <button class="alert alert-danger" type="submit" name="button">Next</button>
+        </form>
+      </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
