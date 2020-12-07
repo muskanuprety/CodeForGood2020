@@ -4,9 +4,11 @@ from django.db import models
 
 class requestUser(models.Model):
 	"""docstring for requestUser"""
-	name = models.CharField(max_length = 100)
+	fname = models.CharField(max_length = 100)
+	lname = models.CharField(max_length = 100)
 	email = models.EmailField(max_length=254)
 	company = models.TextField()
+	dob = models.DateField()
 
 
 class requests(models.Model):
@@ -15,4 +17,9 @@ class requests(models.Model):
 	topic = models.TextField()
 	student_count = models.IntegerField()
 
+class login(models.Model):
+	"""docstring for login"""
+	
+	username = models.TextField()
+	unique_key = models.IntegerField()
 		

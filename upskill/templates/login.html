@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = "container" >
+<div class="row">
+    <div class="col-sm-3">
+      <div class="box">
+      	<br>
+      	<br>
+      	<br>
+
+        <h5>Login</h5> 
+
+        <form class="form-group" action="Login" method="post">
+          {% csrf_token %}
+          username: <input class="form-control" type="text" name="username" value=""><br>
+          
+          Unique Key: <input class="form-control" type="text" name="key" value=""><br>
+         
+          
+          <button class="alert alert-danger" type="submit" name="submit_button">Submit</button>
+          
+        </form>
+      </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
