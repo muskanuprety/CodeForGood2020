@@ -1,0 +1,12 @@
+{% extends 'website/base.html'%}
+
+{% block title %} Create New Request {% endblock %}
+
+{% block content %}
+Create Page
+<from method="post" action="/create/">
+	{{form}}
+	<button type="submit", name="submit">Create New</button>
+</from>
+
+{%endblock %}
