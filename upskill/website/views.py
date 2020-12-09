@@ -1,12 +1,34 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Consumer, Request
-from .forms import CreateNewList, CreateNewList2
+from .forms import CreateNewList, CreateNewList2, CreateUserForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 u=None
 
 def base(response):
 	return render(response, "website/base.html")
+
+def registerPage(response):
+	form = CreateUserForm()
+	context= {'form':form}
+	if response.method=="POST":
+		form = CreateUserForm(response.POST)
+		if form.is_valid():
+			form.save()
+	return render(response,"website/register.html", context)
+
+
+def LoginView(response):
+	form = AutenticationForm()
+	context= {'form':form}
+	if response.method=="POST":
+		form = AutenticationForm(data=response.POST)
+		
+	return render(response,"website/login.html", context)
+
+
+
 
 def create(response):
 	#from website.models import Request
